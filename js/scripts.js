@@ -5,7 +5,7 @@ window.addEventListener('load', () => {
 });
 
 $(document).ready(function() {
-    $(".svg-div").hover(
+    $(".social-icons").hover(
         function() { // on mouse enter
             $(this).css({
                 "width": "238px",
@@ -53,8 +53,6 @@ $(document).ready(function() {
         }
     );
 });
-
-
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
