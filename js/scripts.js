@@ -20,7 +20,6 @@ $(document).ready(function() {
             } else {
                 svgIcon.find(".svg-path").css("fill", "black"); 
             }
-
         }
     );
 
@@ -55,7 +54,7 @@ $(document).ready(function() {
             } else if (window.innerWidth <1350){
                 imageContainer.style.left = '-500px'
             } else {
-                imageContainer.style.left = '-200px'
+                imageContainer.style.left = '-180px'
             }
         }
         isMoved = !isMoved;
