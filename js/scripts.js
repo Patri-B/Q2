@@ -13,9 +13,9 @@ $(document).ready(function() {
             let svgIcon = $(this).children(".svg-icon");
 
             if (svgIcon.hasClass('share-icon')) {
-                svgIcon.find(".svg-path").css("stroke", "white"); // White SVG icon stroke
+                svgIcon.find(".svg-path").css("stroke", "white"); 
             } else {
-                svgIcon.find(".svg-path").css("fill", "white"); // White SVG icon fill
+                svgIcon.find(".svg-path").css("fill", "white"); 
             }
             $(this).append('<span class="hover-text">Lorem ipsum</span>');
         }, function() { // on mouse leave
@@ -26,12 +26,11 @@ $(document).ready(function() {
             let svgIcon = $(this).children(".svg-icon");
 
             if (svgIcon.hasClass('share-icon')) {
-                svgIcon.find(".svg-path").css("stroke", "black"); // Black SVG icon stroke
+                svgIcon.find(".svg-path").css("stroke", "black"); 
             } else {
-                svgIcon.find(".svg-path").css("fill", "black"); // Black SVG icon fill
+                svgIcon.find(".svg-path").css("fill", "black"); 
             }
 
-            // remove the text when the mouse leaves
             $(this).children('.hover-text').remove();
         }
     );
@@ -54,15 +53,11 @@ $(document).ready(function() {
 
     bottomButtons.addEventListener('click', () => {
         if (isMoved) {
-            // If the image container is already moved, reset it back to the original CSS styles
             imageContainer.style.left = '';
         } else {
-            // Check the width of the viewport
             if (window.innerWidth < 960) {
-                // If it's less than 960px, set left to 10%
                 imageContainer.style.left = '10%';
             } else {
-                // Otherwise, set left to 30%
                 imageContainer.style.left = '-15%';
             }
         }
