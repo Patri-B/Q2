@@ -1,10 +1,8 @@
-window.addEventListener('load', () => {
+$(document).ready(function() {
     const preloader = document.getElementById('preloader');
     preloader.style.opacity = '0';
     setTimeout(() => preloader.style.visibility = 'hidden');
-});
 
-$(document).ready(function() {
     $(".social-icons").hover(
         function() { // on mouse enter
             $(this).css({
@@ -24,23 +22,20 @@ $(document).ready(function() {
             $(this).css({
                 "width": "60px",
                 "background-color": "transparent"
-
             });
             let svgIcon = $(this).children(".svg-icon");
-    
+
             if (svgIcon.hasClass('share-icon')) {
                 svgIcon.find(".svg-path").css("stroke", "black"); // Black SVG icon stroke
             } else {
                 svgIcon.find(".svg-path").css("fill", "black"); // Black SVG icon fill
             }
-            
+
             // remove the text when the mouse leaves
             $(this).children('.hover-text').remove();
         }
     );
-});
 
-$(document).ready(function() {
     $("#centered-button").hover(
         function() { // on mouse enter
             $(this).css({
@@ -52,32 +47,28 @@ $(document).ready(function() {
             }).removeClass("bounce");
         }
     );
-});
 
-
-document.addEventListener('DOMContentLoaded', (event) => {
-    // Get reference to the "last-buttons" and "image-container" elements
-    const lastButtons = document.querySelector('.bottom-buttons');
+    const bottomButtons = document.querySelector('.bottom-buttons');
     const imageContainer = document.querySelector('.image-container');
-
-    // Start off in the initial state (could also be controlled via CSS)
     let isMoved = false;
 
-    // Attach click event listener to the "last-buttons" element
-    lastButtons.addEventListener('click', () => {
+    bottomButtons.addEventListener('click', () => {
         if (isMoved) {
-            // If the image container is already moved, move it back to the initial position
-            imageContainer.style.left = '38px';
+            // If the image container is already moved, reset it back to the original CSS styles
+            imageContainer.style.left = '';
         } else {
-            // Otherwise, move the image container to the left
-            imageContainer.style.left = '-140px';
+            // Check the width of the viewport
+            if (window.innerWidth < 960) {
+                // If it's less than 960px, set left to 10%
+                imageContainer.style.left = '10%';
+            } else {
+                // Otherwise, set left to 30%
+                imageContainer.style.left = '-15%';
+            }
         }
-
-        // Flip the isMoved flag
         isMoved = !isMoved;
     });
 });
-
 
 
 
