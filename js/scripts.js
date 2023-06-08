@@ -56,7 +56,7 @@ $(document).ready(function() {
             imageContainer.style.left = '';
         } else {
             if (window.innerWidth < 960) {
-                imageContainer.style.left = '10%';
+                imageContainer.style.left = '-400px';
             } else {
                 imageContainer.style.left = '-15%';
             }
