@@ -3,6 +3,9 @@
   --light-green: #789376;
   --dark-green: #0D9206;
   --gray:#7D7D7D;
+  --orange: #FF8800;
+  --white: #FFFFFF;
+  --dark-shadow:#00000029;
 }
 
 /* RESET */
@@ -18,7 +21,8 @@
   max-height: 966px;
   height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
+
   overflow-x: hidden;
 }
 
@@ -44,7 +48,6 @@ h1 {
 .title-container h1:last-child {
   color: var(--dark-green);
   text-align: left;
-  margin-left: -3%;
 }
 
 p {
@@ -109,10 +112,32 @@ p {
   width: 60px;
   height: 60px;
   margin-top: 40px;
-  border-radius: 50%;
+  border-radius: 96px;
   border: 1px solid var(--light-green);
   transition: 0.1s ease;
   position: relative;
+  overflow: hidden;
+}
+
+.social-icons:hover {
+  width: 238px;
+  background-color: var(--light-green);
+  transition: ease-in-out 0.2s width;
+}
+
+.social-icons .hover-text {
+  display: none;
+  opacity: 0;
+  transform: scaleX(0);
+  text-overflow: clip;
+  white-space: nowrap;
+}
+
+.social-icons:hover .hover-text {
+  display: flex;
+  opacity: 1;
+  transform: scaleX(1);
+  transition: ease-in-out 0.4s all;
 }
 
 .svg-icon {
@@ -159,9 +184,9 @@ p {
   margin-right: 30px;
   height: 141px;
   width: 289px;
-  background: #FFFFFF;
+  background: var(--white);
   border-radius: 12px;
-  box-shadow: -8px 14px 27px rgba(0, 0, 0, 0.1607843137);
+  box-shadow: -8px 14px 27px var(--dark-shadow);
 }
 
 .card > * {
@@ -170,7 +195,7 @@ p {
 }
 
 .card hr {
-  border-top: 3px solid #FF8800;
+  border-top: 3px solid var(--orange);
 }
 
 
@@ -184,8 +209,8 @@ p {
 
 .title-container {
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: flex-start;
   padding-top: 10%;
 }
 
@@ -194,10 +219,11 @@ p {
 }
 
 .paragraph-container {
-  border-left: 4px solid #0D9206;
+  border-left: 4px solid var(--dark-green);
   display: flex;
   flex-direction: column;
   margin-top: 10%;
+  padding-left: 20px;
  
 }
 
@@ -205,26 +231,24 @@ p {
   padding-right: 40px;
 }
 
-
 #repeat {
   height: 30%;
   position: absolute;
   right: 0;
-  top: 35%;
+  top: 42%;
 }
 
 .centered-button {
-  color: #ffffff;
+  color: var(--white);
   font-size: 1.8rem;
   text-align: center;
-  background: #FF8800;
+  background: var(--orange);
   border: none;
   cursor: pointer;
   transition-duration: 1s;
   height: 50px;
   width: 200px;
   margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 @keyframes bounce {
@@ -246,18 +270,18 @@ p {
 .image-container {
   display: flex;
   flex-direction: row;
+  margin-top: 30px;
   z-index: 1;
   position: relative;
   bottom: 5px;
-  left:50%;
+  left:10px;
   transition: left 0.8s ease-in-out;
 }
 
-
 .image-container img {
-  width:30%;
+  width:90vw;
+  max-width: 400px;
   height: auto;
-  position: relative;
 }
 
 /* BUTTONS */
@@ -267,7 +291,7 @@ p {
   flex-direction: row;
   position: absolute;
   cursor: pointer;
-  bottom: 0;
+  bottom: 0px;
   right: 0;
   z-index: 2;
 }
@@ -275,7 +299,7 @@ p {
 .bottom-buttons button {
   height: 60px;
   width: 232px;
-  background: #ffffff;
+  background: var(--white);
   border: none;
   border-radius: 56px;
   opacity: 0.79;  
@@ -283,11 +307,11 @@ p {
   bottom: 36px;
   right: 112px;
   cursor: pointer; 
-  box-shadow: 5px 0px 7px #00000029;
+  box-shadow: 5px 0px 7px var(--dark-shadow);
 }
 
 #preloader {
-  background: #ffffff url(../images/Spinner-1s-237px.gif) no-repeat center center;
+  background: var(--white) url(../images/Spinner-1s-237px.gif) no-repeat center center;
   height: 100vh;
   width: 100%;
   position: fixed;
@@ -316,6 +340,10 @@ p {
     font-size: 20px;
   }
 
+  .title-container {
+    flex-direction: row;
+    align-items: flex-end;
+  }
 
   .paragraph-container p {
     padding-right: 0;
@@ -328,13 +356,16 @@ p {
     margin-bottom: 0;
   }
 
+  #repeat {
+    top: 35%;
+  }
+
   .image-container {
     left:5%;
   }
 
-  .image-container img {
-    width: 250px;
-    height: auto;
+  .bottom-buttons {
+    bottom: -10px;
   }
 
   .bottom-icon {
