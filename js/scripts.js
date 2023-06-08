@@ -57,7 +57,7 @@ $(document).ready(function() {
 
 document.addEventListener('DOMContentLoaded', (event) => {
     // Get reference to the "last-buttons" and "image-container" elements
-    const lastButtons = document.querySelector('.last-buttons');
+    const lastButtons = document.querySelector('.bottom-buttons');
     const imageContainer = document.querySelector('.image-container');
 
     // Start off in the initial state (could also be controlled via CSS)
