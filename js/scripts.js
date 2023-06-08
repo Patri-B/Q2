@@ -62,19 +62,3 @@ $(document).ready(function() {
     });
 });
 
-
-
-/* 
-
-bottomButtons.addEventListener('click', () => {
-    if (isMoved) {
-        imageContainer.style.left = '';
-    } else {
-        if (window.innerWidth < 960) {
-            imageContainer.style.left = '-600px';
-        } else {
-            imageContainer.style.left = '-15%';
-        }
-    }
-    isMoved = !isMoved;
-}); */
