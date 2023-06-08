@@ -5,11 +5,6 @@ $(document).ready(function() {
 
     $(".social-icons").hover(
         function() { // on mouse enter
-            $(this).css({
-                "width": "238px",
-                "border-radius": "96px",
-                "background-color": "#789376"
-            });
             let svgIcon = $(this).children(".svg-icon");
 
             if (svgIcon.hasClass('share-icon')) {
@@ -17,12 +12,7 @@ $(document).ready(function() {
             } else {
                 svgIcon.find(".svg-path").css("fill", "white"); 
             }
-            $(this).append('<span class="hover-text">Lorem ipsum</span>');
         }, function() { // on mouse leave
-            $(this).css({
-                "width": "60px",
-                "background-color": "transparent"
-            });
             let svgIcon = $(this).children(".svg-icon");
 
             if (svgIcon.hasClass('share-icon')) {
@@ -31,7 +21,6 @@ $(document).ready(function() {
                 svgIcon.find(".svg-path").css("fill", "black"); 
             }
 
-            $(this).children('.hover-text').remove();
         }
     );
 
@@ -55,10 +44,18 @@ $(document).ready(function() {
         if (isMoved) {
             imageContainer.style.left = '';
         } else {
-            if (window.innerWidth < 960) {
-                imageContainer.style.left = '-400px';
+            if (window.innerWidth < 600) {
+                imageContainer.style.left = '-600px';
+            } else if (window.innerWidth < 700) {
+                imageContainer.style.left = '-470px';
+            } else if (window.innerWidth <960){
+                imageContainer.style.left = '-220px';
+            } else if (window.innerWidth <1130){
+                imageContainer.style.left = '-600px'
+            } else if (window.innerWidth <1350){
+                imageContainer.style.left = '-500px'
             } else {
-                imageContainer.style.left = '-15%';
+                imageContainer.style.left = '-200px'
             }
         }
         isMoved = !isMoved;
@@ -67,5 +64,17 @@ $(document).ready(function() {
 
 
 
+/* 
 
-
+bottomButtons.addEventListener('click', () => {
+    if (isMoved) {
+        imageContainer.style.left = '';
+    } else {
+        if (window.innerWidth < 960) {
+            imageContainer.style.left = '-600px';
+        } else {
+            imageContainer.style.left = '-15%';
+        }
+    }
+    isMoved = !isMoved;
+}); */
